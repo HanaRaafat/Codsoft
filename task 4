@@ -1,0 +1,80 @@
+#include<iostream>
+using namespace std;
+int main(){
+ string tasks[100];
+ string status[100];
+int counter=0;
+int choice;
+
+do{
+cout << "                       Welcome "<< endl;
+cout << "                      TO DO LIST"<< endl;
+cout << "                    --------------"<<endl;
+cout<< " 1-ADD NEW TASK"<<endl;
+cout << "2-VIEW LIST"<<endl;
+cout << "3-DELETE TASK"<<endl;
+cout << "4-STATUS" << endl;
+cout << "5-EXIT"<<endl;
+
+cin >> choice;
+
+switch(choice){
+    case 1:
+   
+        if (counter>99){
+            cout << "Task list is full"<<endl;
+        }
+        else {
+    cout<< "enter a new task"<<endl;
+    cin>> tasks[counter];
+    counter++;
+}
+    break;
+   
+
+  case 2:
+  if (counter==0){
+      cout << "list is empty"<< endl;
+  }
+  else
+        cout << "The list has the following tasks" << endl;
+        for (int i = 0; i < counter; i++) {
+            cout << tasks[i] << "  " << status[i] << endl;
+        }
+        break;
+ case 3:
+        int del_task;
+    cout << "Enter the number of the task to delete" << endl;
+    cin >> del_task;
+    if (del_task > 0 && del_task <= counter) {  // Adjusted condition
+        for (int i = del_task - 1; i < counter - 1; i++) {  // Start from del_task - 1
+            tasks[i] = tasks[i + 1];
+            status[i] = status[i + 1];  // Also shift the status array
+        }
+        counter--;
+        cout << "Task deleted successfully." << endl;
+    } else {
+        cout << "No task to be deleted." << endl;
+    }
+    break;
+        break;
+        case 4:
+        cout << "enter number of task which is completed "<< endl;
+        cin >> tasks[counter];
+        cout << "Now choose if it's completed or pending"<< endl;
+        cin >> status[counter];
+        counter++;
+       
+       
+          case 5 :
+        cout << "shutting down"<< endl;
+        break;
+       
+        default:
+        cout << "there is no such choice please,try again"<< endl;
+        break;
+}
+    } while (choice != 5);
+
+return 0;
+}
