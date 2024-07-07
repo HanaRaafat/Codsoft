@@ -46,7 +46,7 @@ switch(choice){
         int del_task;
     cout << "Enter the number of the task to delete" << endl;
     cin >> del_task;
-    if (del_task > 0 && del_task <= counter) {  // Adjusted condition
+    if (del_task > 0 && del_task <= counter) {  
         for (int i = del_task - 1; i < counter - 1; i++) {  
             tasks[i] = tasks[i + 1];
             status[i] = status[i + 1];  
