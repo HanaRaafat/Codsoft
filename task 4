@@ -47,9 +47,9 @@ switch(choice){
     cout << "Enter the number of the task to delete" << endl;
     cin >> del_task;
     if (del_task > 0 && del_task <= counter) {  // Adjusted condition
-        for (int i = del_task - 1; i < counter - 1; i++) {  // Start from del_task - 1
+        for (int i = del_task - 1; i < counter - 1; i++) {  
             tasks[i] = tasks[i + 1];
-            status[i] = status[i + 1];  // Also shift the status array
+            status[i] = status[i + 1];  
         }
         counter--;
         cout << "Task deleted successfully." << endl;
@@ -59,7 +59,7 @@ switch(choice){
     break;
         break;
         case 4:
-        cout << "enter number of task which is completed "<< endl;
+        cout << "enter number of task  "<< endl;
         cin >> tasks[counter];
         cout << "Now choose if it's completed or pending"<< endl;
         cin >> status[counter];
