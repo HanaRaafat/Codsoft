@@ -1,0 +1,32 @@
+#include <iostream>
+#include <ctime>
+using namespace std;
+int main(){
+    cout << "Welcome to our guessing number game"<< endl;
+    cout << "instructions:"<<endl;
+    cout << "you have to guess a number between 1 & 100"<< endl;
+    int computernumber;
+    int guess;
+    srand(time(0));
+    computernumber= rand()%100+1;
+    cout << "let's try please, enter your guess"<< endl;
+    cin >> guess;
+    for (int i=guess; i!=computernumber;i++){
+   if (guess>computernumber){
+    cout << "your guess is high try smaller number"<< endl;
+    cin >> guess;
+   }
+   else if (guess<computernumber){
+    cout << "your guess is too low"<< endl;
+    cin >> guess;
+   }
+    }
+   cout << "Congratulations you guessed the right number"<< endl;
+
+
+
+
+    return 0;
+}
+
+
