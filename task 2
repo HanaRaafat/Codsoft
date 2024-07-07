@@ -1,0 +1,35 @@
+#include<iostream>
+using namespace std;
+int main(){
+float num1,num2;
+char operations;
+cout<<"Welcome"<< endl;
+cout <<"please enter your first number"<<endl;
+cin >> num1;
+cout << "please enter your second number"<< endl;
+cin >> num2;
+cout << "Choose the desired operation(+,-,*,/)"<<endl;
+cin >> operations;
+switch(operations){
+    case '+':
+    cout << num1 + num2 << endl;
+    break;
+    case '-':
+    cout << num1-num2 << endl;
+    break;
+    case '*':
+    cout << num1 * num2 << endl;
+    break;
+    case '/':
+    if (num2==0){
+        cout << "you can't divide by 0 please try another number"<< endl;
+    }
+    else
+    cout << num1 / num2 << endl;
+    break;
+    default:
+    cout << "operator is not right please choose another one"<< endl;
+    break;
+}
+return 0;
+}
